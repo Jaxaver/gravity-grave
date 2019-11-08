@@ -52,10 +52,9 @@ const Game = {
       if (this.player.posY >= this.height || this.player.posY + 100 <= 0 || this.player.posX + 90 <= 0) {
         let gameOverSound = document.createElement("audio")
                    gameOverSound.src = "./sound/NFF-man-silly-laugh.wav"
-                   gameOverSound.volume = 0.2
+                   gameOverSound.volume = 0.4
                    gameOverSound.play()
         this.gameOver()
-        alert("Your game is over because you suck. It's no one else's fault but your mediocre skills and terrible attitude towards life. You're beyond help.")
 
       }
     }, 1000 / this.fps);

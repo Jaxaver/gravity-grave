@@ -13,6 +13,10 @@ class Background {
         this.bgSpeed = 2
     }
 
+   // gameOverImage() {
+   //     this.image.src =
+   // }
+
     draw() {
 
         this.ctx.drawImage(this.image, this.posX, this.posY, this.width, this.height)
