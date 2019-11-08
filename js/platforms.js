@@ -3,13 +3,13 @@ class Platform {
     this.ctx = ctx;
     this.width = width;
     this.height = 45;
-    this.velX = 9;
+    this.velX = 8;
     this.posX = posX;
-    this.posY = posY //generar aleatoriamente a posteriori
+    this.posY = posY 
   }
 
   draw() {
-    this.ctx.fillStyle = "white";
+    this.ctx.fillStyle = "grey";
     this.ctx.fillRect(this.posX, this.posY, this.width, this.height);
   }
 

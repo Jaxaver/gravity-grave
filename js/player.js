@@ -98,7 +98,10 @@ class Player {
           this.directions.top_arrow = true
           if (this.directions.top_arrow && this.canJump) {
             this.canJump = false
-            
+            let jumpSound = document.createElement("audio")
+                   jumpSound.src = "./sound/NFF-cyborg-jump.wav"
+                   jumpSound.volume = 0.2
+                   jumpSound.play()
             if (this.gravity>0) {
               this.posY -= 8
               this.velY -= 8  
@@ -120,11 +123,18 @@ class Player {
             this.gravity *= -1;
             this.velY = 0;
 
+            //SONIDO Y DEMÁS
+            let reverseSound = document.createElement("audio")
+                   reverseSound.src = "./sound/NFF-leap-out.wav"
+                   reverseSound.volume = 0.2
+                   reverseSound.play()
+            //SONIDO ARRIBA
+
             if (this.gravity < 0) {
-              this.posY -= 15
+              this.posY -= 7
             }
             else {
-              this.posY += 15
+              this.posY += 7
             }
           }
 

@@ -49,7 +49,11 @@ const Game = {
       //Aumentamos la puntuación cada X frames.
       if (this.framesCounter % 60 == 0) this.score++;
 
-      if (this.player.posY >= this.height || this.player.posY + 120 <= 0 || this.player.posX + 85 <= 0) {
+      if (this.player.posY >= this.height || this.player.posY + 100 <= 0 || this.player.posX + 90 <= 0) {
+        let gameOverSound = document.createElement("audio")
+                   gameOverSound.src = "./sound/NFF-man-silly-laugh.wav"
+                   gameOverSound.volume = 0.2
+                   gameOverSound.play()
         this.gameOver()
         alert("Your game is over because you suck. It's no one else's fault but your mediocre skills and terrible attitude towards life. You're beyond help.")
 
@@ -92,18 +96,18 @@ const Game = {
   //Platform part
 
   startingPlatform() {
-    this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 0, 500, 1500))
+    this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 0, 600, 1500))
     //this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 1100, 0, 200))
 
   },
 
   generatePlatforms() {
     if (this.framesCounter % 100 == 0) {
-      this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 900, Math.floor(Math.random() * 50) , 100 + Math.floor(Math.random() * 100)))
-      this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 1350, 450 + Math.floor(Math.random() * 50), 100 + Math.floor(Math.random() * 100)))
+      this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 900, Math.floor(Math.random() * 50) , 150 + Math.floor(Math.random() * 100)))
+      this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 1350, 550 + Math.floor(Math.random() * 50), 150 + Math.floor(Math.random() * 100)))
     }
     if (this.framesCounter % 50 == 0) {
-      this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 1100, 225 + Math.floor(Math.random() * 50), 50 + Math.floor(Math.random() * 100)))
+      this.platforms.push(new Platform(this.ctx, this.canvas.width, this.canvas.height, 1100, 225 + Math.floor(Math.random() * 150), 100 + Math.floor(Math.random() * 100)))
 
     }
   },
@@ -184,6 +188,7 @@ const Game = {
   },
 
   gameOver() {
+    
     clearInterval(this.interval);
   }
 

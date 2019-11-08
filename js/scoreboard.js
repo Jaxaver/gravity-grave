@@ -7,7 +7,7 @@ const ScoreBoard = {
     },
 
     update: function (score) {
-        this.ctx.fillStyle = "black";
+        this.ctx.fillStyle = "white";
         this.ctx.fillText(Math.floor(score), 1000, 80);
     }
 };
