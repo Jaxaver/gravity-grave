@@ -52,7 +52,7 @@ const Game = {
       if (this.player.posY >= this.height || this.player.posY + 100 <= 0 || this.player.posX + 90 <= 0) {
         let gameOverSound = document.createElement("audio")
                    gameOverSound.src = "./sound/NFF-man-silly-laugh.wav"
-                   gameOverSound.volume = 0.4
+                   gameOverSound.volume = 0.6
                    gameOverSound.play()
         this.gameOver()
 

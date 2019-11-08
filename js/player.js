@@ -126,7 +126,7 @@ class Player {
             //SONIDO Y DEMÁS
             let reverseSound = document.createElement("audio")
                    reverseSound.src = "./sound/NFF-leap-out.wav"
-                   reverseSound.volume = 0.2
+                   reverseSound.volume = 0.3
                    reverseSound.play()
             //SONIDO ARRIBA
 
